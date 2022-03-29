@@ -26,6 +26,7 @@ spec:
                 - |
                   du -sh /usr/bin
                   tar czf /data/binarch.tar.gz /usr/bin
+                  printf "Pause for effect 🦆" && sleep 3
             - name: init-step-2
               image: ubuntu
               volumeMounts:
@@ -36,7 +37,8 @@ spec:
                 - -c
                 - |
                   cd /data
-                  tar xvf binarch.tar.gz
+                  tar -tzf binarch.tar.gz | wc -l
+                  printf "Pause for effect 🐔" && sleep 3
             - name: init-step-3
               image: ubuntu
               volumeMounts:
@@ -47,6 +49,7 @@ spec:
                 - -c
                 - |
                   du -sh /data/*
+                  printf "Pause for effect 🐇" && sleep 3
           containers:
           - name: finisher-container
             image: ubuntu
@@ -57,4 +60,4 @@ spec:
               - /bin/bash
               - -c
               - |
-                echo "Success!"
+                echo "Success! 🪱"
