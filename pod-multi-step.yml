@@ -5,7 +5,7 @@ metadata:
   labels:
     app: multistep
 spec:
-  restartPolicy: Never
+  restartPolicy: OnFailure
   volumes:
   - name: data
     emptyDir: {}
