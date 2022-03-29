@@ -58,4 +58,3 @@ spec:
               - -c
               - |
                 echo "Success!"
-          
