@@ -5,7 +5,8 @@ metadata:
   labels:
     app: multistep
 spec:
-  schedule: "* * * * *"
+  schedule: "15 * * * *"
+  suspend: true
   jobTemplate:
     spec:
       template:
