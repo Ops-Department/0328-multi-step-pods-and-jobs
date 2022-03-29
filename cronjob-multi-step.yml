@@ -1,5 +1,5 @@
 apiVersion: batch/v1
-kind: CronJob
+kind: CronJob 
 metadata:
   name: multistep-cronjob-example
   labels:
@@ -27,7 +27,8 @@ spec:
                 - |
                   du -sh /usr/bin
                   tar czf /data/binarch.tar.gz /usr/bin
-                  printf "Pause for effect 🦆" && sleep 10
+                  printf "\nPause for effect 🦆\n"
+                  sleep 10
             - name: init-step-2
               image: ubuntu
               volumeMounts:
@@ -39,7 +40,8 @@ spec:
                 - |
                   cd /data
                   tar -tzf binarch.tar.gz | wc -l
-                  printf "Pause for effect 🐔" && sleep 10
+                  printf "\nPause for effect 🐔\n"
+                  sleep 10
             - name: init-step-3
               image: ubuntu
               volumeMounts:
@@ -50,7 +52,8 @@ spec:
                 - -c
                 - |
                   du -sh /data/*
-                  printf "Pause for effect 🐇" && sleep 10
+                  printf "\nPause for effect 🐇\n"
+                  sleep 10
           containers:
           - name: finisher-container
             image: ubuntu
