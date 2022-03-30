@@ -3,6 +3,7 @@
 This is the source code for the YouTube video titled `0328 - Multi Step Pods & Jobs`
 
 These examples use Kubernetes `initContainers` to execute a series of steps in Kubernetes. For many tasks, you don't need anything complicated.
+![diagram2](diagram2.jpg)
 
 ## Steps - Example
 
